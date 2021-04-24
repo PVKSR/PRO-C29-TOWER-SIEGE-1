@@ -6,6 +6,7 @@ const Constraint = Matter.Constraint;
 var engine, world;
 var holder,ball,ground;
 var stand1,stand2;
+var polygon1;
 var ball;
 var slingShot;
 var polygon_img;
@@ -58,9 +59,9 @@ function setup() {
 
   block25 = new Block(700,130,30,40);
 
-  polygon2 = new polygon(50,200,30);
+  polygon1 = new polygon(50,200,30);
 
-
+  slingShot = new slingshot(polygon1.body,{x:100,y:200})
 
 
 
@@ -113,14 +114,14 @@ function draw() {
   block16.display();
   block25.display();
   
-polygon2.display();
+polygon1.display();
 slingShot.display();
 }
 
 
 function mouseDragged(){
 
-  Matter.Body.setPosition(polygon2.body, {x:mouseX , y:mouseY } );
+  Matter.Body.setPosition(polygon1.body, {x:mouseX , y:mouseY});
   
   }
   
